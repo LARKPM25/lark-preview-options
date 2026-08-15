@@ -81,6 +81,24 @@
     .package-tile figure { background: #3a322a; }
     .split-media { background: #3a322a; }
 
+    /* Powder-coat finishes strip (dark-adapted) */
+    .finishes { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 0.5rem; }
+    .finish { display: grid; justify-items: center; gap: 0.55rem; }
+    .finish-chip {
+      width: 3.4rem;
+      height: 3.4rem;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 236, 210, 0.28);
+      box-shadow: inset 0 -8px 14px rgba(0, 0, 0, 0.25);
+    }
+    .finish span {
+      font-family: var(--font-brand);
+      font-size: 0.58rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
     /* Daylight break — cream section with dark text */
     .section-cream { background: var(--cream); color: var(--cream-text); }
     .section-cream .section-lead { color: var(--cream-muted); }
@@ -149,7 +167,7 @@
   <main class="site-main">
     <section class="hero">
       <div class="hero-media" aria-hidden="true">
-        <img src="https://wordpress-1639387-6605884.cloudwaysapps.com/wp-content/themes/lark-kitchens/assets/images/hero/hero-night.jpg" alt="">
+        <img src="https://i.postimg.cc/gcQ9fHq1/hero-dusk.jpg" alt="">
       </div>
       <div class="hero-content">
         <p class="hero-brand">
@@ -235,16 +253,20 @@
           <img src="https://wordpress-1639387-6605884.cloudwaysapps.com/wp-content/themes/lark-kitchens/assets/images/details/detail-white-1.jpg" alt="White outdoor cabinetry detail">
         </div>
         <div>
-          <p class="section-kicker">Built for the backyard</p>
+          <p class="section-kicker">Finishes &amp; build</p>
           <h2 class="section-title">Cabinetry first. Celebration always.</h2>
-          <p class="section-lead" style="margin-bottom:1.25rem;">Weather-ready outdoor cabinets with clean lines and storage that keeps the party moving — drawers, doors, and pull-outs designed around real grilling nights.</p>
-          <ul class="checklist">
-            <li>White-labeled outdoor kitchen cabinetry</li>
-            <li>Preconfigured islands sized for real patios</li>
-            <li>Custom layouts when stock won’t cut it</li>
-            <li>ACH checkout via Melio after you place an order</li>
-          </ul>
-          <a class="btn" href="#">Start an order</a>
+          <p class="section-lead" style="margin-bottom:1.25rem;">Weather-ready outdoor cabinets with clean lines and storage that keeps the party moving. Pick a powder-coat finish that matches your patio.</p>
+          <div class="finishes">
+            <div class="finish"><div class="finish-chip" style="background:#8a9377;"></div><span>Sage</span></div>
+            <div class="finish"><div class="finish-chip" style="background:#f4f2ec;"></div><span>Cloud</span></div>
+            <div class="finish"><div class="finish-chip" style="background:#4a4f55;"></div><span>Slate</span></div>
+            <div class="finish"><div class="finish-chip" style="background:#cfc2a8;"></div><span>Sand</span></div>
+            <div class="finish"><div class="finish-chip" style="background:#2e2b28;"></div><span>Graphite</span></div>
+            <div class="finish"><div class="finish-chip" style="background:#ff4d3a;"></div><span>Ember</span></div>
+          </div>
+          <div class="btn-row" style="margin-top:1.75rem;">
+            <a class="btn" href="#">Start an order</a>
+          </div>
         </div>
       </div>
     </section>
