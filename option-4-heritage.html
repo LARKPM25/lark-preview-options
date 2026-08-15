@@ -28,46 +28,14 @@
     img { max-width: 100%; display: block; }
     a { color: inherit; text-decoration: none; }
 
-    .announce {
-      background: var(--taupe);
-      color: #fff;
-      text-align: center;
-      font-size: 0.78rem;
-      letter-spacing: 0.06em;
-      padding: 0.55rem 1rem;
-    }
+    .announce { background: var(--taupe); color: #fff; text-align: center; font-size: 0.78rem; letter-spacing: 0.06em; padding: 0.55rem 1rem; }
     .announce u { text-underline-offset: 3px; }
 
     .masthead { text-align: center; padding: 2.1rem 1rem 1.2rem; }
-    .wordmark {
-      font-family: var(--serif);
-      font-weight: 500;
-      font-size: clamp(1.9rem, 4vw, 2.7rem);
-      letter-spacing: 0.42em;
-      text-transform: uppercase;
-      margin-right: -0.42em;
-    }
-    .wordmark-sub {
-      display: block;
-      font-family: var(--sans);
-      font-size: 0.64rem;
-      letter-spacing: 0.58em;
-      margin-right: -0.58em;
-      text-transform: uppercase;
-      color: var(--ink-soft);
-      margin-top: 0.35rem;
-    }
+    .wordmark { font-family: var(--serif); font-weight: 500; font-size: clamp(1.9rem, 4vw, 2.7rem); letter-spacing: 0.42em; text-transform: uppercase; margin-right: -0.42em; }
+    .wordmark-sub { display: block; font-family: var(--sans); font-size: 0.64rem; letter-spacing: 0.58em; margin-right: -0.58em; text-transform: uppercase; color: var(--ink-soft); margin-top: 0.35rem; }
 
-    .nav-tier {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 2rem;
-      padding: 0.8rem 1rem;
-      font-size: 0.78rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
+    .nav-tier { display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem; padding: 0.8rem 1rem; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; }
     .nav-tier.services { border-top: 1px solid var(--rule); font-size: 0.72rem; color: var(--ink-soft); text-transform: none; letter-spacing: 0.04em; }
     .nav-tier.categories { border-block: 1px solid var(--rule); font-weight: 600; }
     .nav-tier a:hover { text-decoration: underline; text-underline-offset: 4px; }
@@ -77,26 +45,8 @@
     .hero::after { content: ""; position: absolute; inset: 0; background: rgba(30, 25, 18, 0.28); }
     .hero-content { position: relative; z-index: 2; text-align: center; color: #fff; padding: 4rem 1.5rem; }
     .hero-eyebrow { font-family: var(--serif); font-style: italic; font-size: clamp(1.2rem, 2.4vw, 1.7rem); margin: 0 0 0.6rem; }
-    .hero h1 {
-      font-family: var(--serif);
-      font-weight: 500;
-      font-size: clamp(2.6rem, 6.5vw, 4.6rem);
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      margin: 0 0 1.6rem;
-      line-height: 1.15;
-    }
-    .btn-solid {
-      display: inline-block;
-      background: #fff;
-      color: var(--ink);
-      font-size: 0.74rem;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      padding: 0.95rem 1.9rem;
-      border-radius: 2px;
-    }
+    .hero h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(2.6rem, 6.5vw, 4.6rem); letter-spacing: 0.14em; text-transform: uppercase; margin: 0 0 1.6rem; line-height: 1.15; }
+    .btn-solid { display: inline-block; background: #fff; color: var(--ink); font-size: 0.74rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; padding: 0.95rem 1.9rem; border-radius: 2px; }
     .btn-solid:hover { background: var(--cream); }
 
     .statement { max-width: 46rem; margin: 0 auto; text-align: center; padding: 4.5rem 1.5rem 3.5rem; }
@@ -110,20 +60,12 @@
     .tile figure { margin: 0; aspect-ratio: 4 / 5; overflow: hidden; background: var(--cream-deep); }
     .tile img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
     .tile:hover img { transform: scale(1.04); }
-    .tile-label {
-      background: #fff;
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.74rem;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-    }
+    .tile-label { background: #fff; text-align: center; padding: 1rem; font-size: 0.74rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
     .tile-label span { display: block; font-family: var(--serif); font-weight: 400; font-style: italic; font-size: 0.95rem; letter-spacing: 0.02em; text-transform: none; color: var(--ink-soft); margin-top: 0.25rem; }
 
     .finish-band { background: var(--cream-deep); padding: 4.5rem 1.5rem; text-align: center; }
     .finish-band h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(1.9rem, 4vw, 2.6rem); margin: 0 0 0.6rem; }
-    .finish-band p { color: var(--ink-soft); max-width: 34rem; margin: 0 auto 2.4rem; }
+    .finish-band p { color: var(--ink-soft); max-width: 40rem; margin: 0 auto 2.4rem; }
     .finish-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 2.2rem; margin-bottom: 2.2rem; }
     .finish { display: grid; justify-items: center; gap: 0.7rem; }
     .finish-chip { width: 4.4rem; height: 4.4rem; border-radius: 50%; border: 1px solid rgba(38, 34, 28, 0.22); box-shadow: inset 0 -10px 18px rgba(0, 0, 0, 0.14); }
@@ -138,17 +80,7 @@
     .story-eyebrow { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; color: var(--taupe); margin: 0 0 1rem; }
     .story h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(1.9rem, 3.6vw, 2.6rem); line-height: 1.18; margin: 0 0 1.1rem; }
     .story p { color: var(--ink-soft); margin: 0 0 1.8rem; }
-    .btn-outline {
-      display: inline-block;
-      border: 1px solid var(--ink);
-      color: var(--ink);
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      padding: 0.9rem 1.7rem;
-      border-radius: 2px;
-    }
+    .btn-outline { display: inline-block; border: 1px solid var(--ink); color: var(--ink); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; padding: 0.9rem 1.7rem; border-radius: 2px; }
     .btn-outline:hover { background: var(--ink); color: var(--cream); }
 
     .services-banner { position: relative; min-height: 52vh; display: grid; place-items: center; overflow: hidden; }
@@ -172,14 +104,7 @@
     .footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.55rem; font-size: 0.88rem; }
     .footer-note { max-width: var(--max); margin: 2.5rem auto 0; padding-top: 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.14); font-size: 0.78rem; color: #9a9184; }
 
-    .option-switch {
-      position: fixed; right: 1rem; bottom: 1rem; z-index: 90;
-      display: flex; align-items: center; gap: 0.45rem;
-      padding: 0.55rem 0.75rem;
-      background: rgba(38, 34, 28, 0.92); border-radius: 999px;
-      font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.75); font-family: var(--sans);
-    }
+    .option-switch { position: fixed; right: 1rem; bottom: 1rem; z-index: 90; display: flex; align-items: center; gap: 0.45rem; padding: 0.55rem 0.75rem; background: rgba(38, 34, 28, 0.92); border-radius: 999px; font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255, 255, 255, 0.75); font-family: var(--sans); }
     .option-switch a { display: grid; place-items: center; width: 1.7rem; height: 1.7rem; border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.3); color: #fff; }
     .option-switch a.is-active { background: #fff; color: var(--ink); border-color: #fff; }
   </style>
@@ -194,17 +119,15 @@
 
 <nav class="nav-tier services">
   <a href="#">Free Design Services</a>
-  <a href="#">Project Guides</a>
-  <a href="#">Order Finish Samples</a>
+  <a href="heritage-difference.html">The Lark Difference</a>
+  <a href="heritage-finishes.html">Order Finish Samples</a>
   <a href="#">For the Trade</a>
 </nav>
 <nav class="nav-tier categories">
-  <a href="#">Packages</a>
-  <a href="#">Straight Run</a>
-  <a href="#">L-Shaped</a>
-  <a href="#">U-Shaped</a>
-  <a href="#">Galley</a>
-  <a href="#">Custom</a>
+  <a href="heritage-packages.html">Packages</a>
+  <a href="heritage-finishes.html">Finishes</a>
+  <a href="heritage-custom.html">Custom</a>
+  <a href="heritage-difference.html">Craftsmanship</a>
   <a href="#">Contact</a>
 </nav>
 
@@ -214,24 +137,24 @@
     <div class="hero-content">
       <p class="hero-eyebrow">the outdoor collection</p>
       <h1>Built for<br>Gathering</h1>
-      <a class="btn-solid" href="#">Explore the Packages</a>
+      <a class="btn-solid" href="heritage-packages.html">Explore the Packages</a>
     </div>
   </section>
 
   <section class="statement">
     <div class="rule-flourish"></div>
     <h2>Cabinetry first. Celebration always.</h2>
-    <p>Weather-ready outdoor cabinetry, made in America and designed around real backyards — twelve preconfigured packages, full custom design services, and finishes chosen for decades of dinners outside.</p>
+    <p>Weather-resistant aluminum outdoor cabinetry that will not rust — made in the USA by skilled craftsmen. Four ready-to-order island sizes, a full custom program, and outdoor-rated finishes backed by a five-year limited warranty.</p>
   </section>
 
   <section class="tiles">
-    <a class="tile" href="#">
+    <a class="tile" href="heritage-packages.html">
       <figure><img src="https://wordpress-1639387-6605884.cloudwaysapps.com/wp-content/themes/lark-kitchens/assets/images/packages/hearth-life.jpg" alt="The Hearth package"></figure>
-      <div class="tile-label">Preconfigured Packages<span>Twelve layouts, ready to order</span></div>
+      <div class="tile-label">Preconfigured Packages<span>Four island sizes, ready to order</span></div>
     </a>
-    <a class="tile" href="#">
+    <a class="tile" href="heritage-custom.html">
       <figure><img src="https://wordpress-1639387-6605884.cloudwaysapps.com/wp-content/themes/lark-kitchens/assets/images/gallery/patio-1.jpg" alt="Custom pavilion outdoor kitchen"></figure>
-      <div class="tile-label">Custom Design<span>Shaped to your patio by our designers</span></div>
+      <div class="tile-label">Custom Design<span>Any size, any layout — designed with you</span></div>
     </a>
     <a class="tile" href="#">
       <figure><img src="https://wordpress-1639387-6605884.cloudwaysapps.com/wp-content/themes/lark-kitchens/assets/images/details/detail-stainless-2.jpg" alt="Cabinetry installation detail"></figure>
@@ -241,16 +164,19 @@
 
   <section class="finish-band">
     <h2>Shop by finish</h2>
-    <p>Powder-coat finishes chosen to live outside — order samples and see them in your own light before you commit.</p>
+    <p>Nine standard powder-coat finishes and four premium hand-finished options, all rated for the outdoors and tested by an independent lab — plus custom finishes on request. Mix colors across the base, doors, and countertop.</p>
     <div class="finish-row">
-      <div class="finish"><div class="finish-chip" style="background:#8a9377;"></div><span>Sage</span></div>
-      <div class="finish"><div class="finish-chip" style="background:#f4f2ec;"></div><span>Cloud</span></div>
-      <div class="finish"><div class="finish-chip" style="background:#4a4f55;"></div><span>Slate</span></div>
-      <div class="finish"><div class="finish-chip" style="background:#cfc2a8;"></div><span>Sand</span></div>
-      <div class="finish"><div class="finish-chip" style="background:#2e2b28;"></div><span>Graphite</span></div>
-      <div class="finish"><div class="finish-chip" style="background:#b5482e;"></div><span>Ember</span></div>
+      <div class="finish"><div class="finish-chip" style="background:#473d31;"></div><span>Bronze</span></div>
+      <div class="finish"><div class="finish-chip" style="background:#393a34;"></div><span>Charcoal</span></div>
+      <div class="finish"><div class="finish-chip" style="background:#b8b9b2;"></div><span>Cloud</span></div>
+      <div class="finish"><div class="finish-chip" style="background:#7d7560;"></div><span>Concrete</span></div>
+      <div class="finish"><div class="finish-chip" style="background:#afafad;"></div><span>Granite</span></div>
+      <div class="finish"><div class="finish-chip" style="background:#313234;"></div><span>Graphite</span></div>
+      <div class="finish"><div class="finish-chip" style="background:#7a805e;"></div><span>Sage</span></div>
+      <div class="finish"><div class="finish-chip" style="background:#b5aa89;"></div><span>Sand</span></div>
+      <div class="finish"><div class="finish-chip" style="background:#ffffff;"></div><span>White</span></div>
     </div>
-    <a class="link-quiet" href="#">Order finish samples</a>
+    <a class="link-quiet" href="heritage-finishes.html">All finishes &amp; premium options</a>
   </section>
 
   <section class="story">
@@ -258,8 +184,8 @@
     <div>
       <p class="story-eyebrow">Craftsmanship</p>
       <h2>Made to live outside, made to be looked at.</h2>
-      <p>Clean lines, weather-ready construction, and storage designed around the way people actually cook and host outdoors — drawers, doors, and pull-outs that keep the evening moving.</p>
-      <a class="btn-outline" href="#">The Lark Difference</a>
+      <p>Weather-resistant aluminum framework with corrosion-resistant hardware — it will not rust. Weatherproof stainless storage components, and dry storage that protects what's inside from moisture, humidity, and insects.</p>
+      <a class="btn-outline" href="heritage-difference.html">The Lark Difference</a>
     </div>
   </section>
 
@@ -267,9 +193,9 @@
     <figure><img src="https://wordpress-1639387-6605884.cloudwaysapps.com/wp-content/themes/lark-kitchens/assets/images/gallery/granite-white.jpg" alt="Granite-top outdoor kitchen island"></figure>
     <div>
       <p class="story-eyebrow">The packages</p>
-      <h2>Twelve layouts. One great night.</h2>
-      <p>Hearth, Harbor, Ridge, Gathering and eight more — preconfigured islands sized for real patios, each ready to order and delivered to your patio or job site.</p>
-      <a class="btn-outline" href="#">Browse all twelve</a>
+      <h2>Four islands. Endless configurations.</h2>
+      <p>Hearth, Harbor, Ridge, and Gathering — from a 77" starter island to a 140" celebration kitchen, each with a 2" aluminum countertop and room for grills up to 40" wide. Extend any of them with L-shape add-ons or a ceramic grill base.</p>
+      <a class="btn-outline" href="heritage-packages.html">Browse the islands</a>
     </div>
   </section>
 
@@ -285,13 +211,13 @@
   <section class="trade">
     <div>
       <h3>Made in the USA</h3>
-      <p>American-built cabinetry, engineered for every season your backyard sees.</p>
-      <a href="#">Our materials</a>
+      <p>Built by skilled American craftsmen and backed by a five-year limited warranty.</p>
+      <a href="heritage-difference.html">Our materials</a>
     </div>
     <div>
-      <h3>Delivered where you build</h3>
-      <p>Straight to your patio — or to the job site, with installation support for clean punch lists.</p>
-      <a href="#">Delivery details</a>
+      <h3>Ships ready to enjoy</h3>
+      <p>Most kitchens ship fully assembled — set up and enjoy the same day, on a patio, deck, rooftop, or poolside.</p>
+      <a href="heritage-packages.html">Delivery details</a>
     </div>
     <div>
       <h3>For the trade</h3>
@@ -309,11 +235,11 @@
     </div>
     <div>
       <h4>Shop</h4>
-      <ul><li><a href="#">Packages</a></li><li><a href="#">Custom</a></li><li><a href="#">Finishes</a></li><li><a href="#">Grills &amp; Tools</a></li></ul>
+      <ul><li><a href="heritage-packages.html">Packages</a></li><li><a href="heritage-custom.html">Custom</a></li><li><a href="heritage-finishes.html">Finishes</a></li><li><a href="#">Grills &amp; Tools</a></li></ul>
     </div>
     <div>
       <h4>Services</h4>
-      <ul><li><a href="#">Design Services</a></li><li><a href="#">Project Guides</a></li><li><a href="#">For the Trade</a></li></ul>
+      <ul><li><a href="#">Design Services</a></li><li><a href="heritage-difference.html">The Lark Difference</a></li><li><a href="#">For the Trade</a></li></ul>
     </div>
     <div>
       <h4>Company</h4>
