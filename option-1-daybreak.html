@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lark Kitchens — Option 1: Ember Daybreak</title>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=Manrope:wght@300;400;500;600;700&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://wordpress-1639387-6605884.cloudwaysapps.com/wp-content/themes/lark-kitchens/assets/css/main.css">
+  <style>
+    /* ============================================================
+       OPTION 1 — EMBER DAYBREAK
+       Keep the signature night hero. Everything below it lives on a
+       warm cream canvas so the cabinetry reads in daylight.
+       ============================================================ */
+    :root {
+      --bg: #faf6ee;
+      --bg-elev: #f2ecdf;
+      --bg-soft: #ffffff;
+      --text: #241e17;
+      --muted: #6d6357;
+      --line: rgba(36, 30, 23, 0.14);
+      --night: #16110c;
+      --night-elev: #221a13;
+    }
+
+    body { background: var(--bg); color: var(--text); }
+
+    /* Sticky charcoal header works over both the night hero and cream body */
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto;
+      padding: 0.85rem 1.5rem;
+      background: rgba(22, 17, 12, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .nav-list a { color: rgba(255, 255, 255, 0.92); }
+    .nav-cta {
+      display: inline-flex;
+      padding: 0.6rem 1.1rem;
+      border-radius: var(--radius);
+      background: var(--coral);
+      color: #fff !important;
+      font-family: var(--font-brand);
+      font-size: 0.66rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    .nav-cta:hover { background: var(--coral-hot); color: #fff; }
+
+    /* Night hero stays — the brand moment */
+    .hero { min-height: 92vh; min-height: 92dvh; }
+
+    /* Trust bar */
+    .trust-bar { background: var(--bg-soft); border-bottom: 1px solid var(--line); padding: 1.4rem 1.5rem; }
+    .trust-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+    }
+    @media (max-width: 860px) { .trust-inner { grid-template-columns: repeat(2, 1fr); } }
+    .trust-item { display: flex; align-items: center; gap: 0.7rem; }
+    .trust-item::before {
+      content: "";
+      flex: none;
+      width: 0.6rem;
+      height: 0.6rem;
+      background: var(--coral);
+      border-radius: 1px;
+    }
+    .trust-item strong { display: block; font-size: 0.92rem; letter-spacing: 0.01em; }
+    .trust-item span { display: block; color: var(--muted); font-size: 0.78rem; }
+
+    /* Light sections */
+    .section-dark { background: var(--bg); }
+    .section-elev {
+      background:
+        radial-gradient(ellipse 80% 60% at 10% 0%, rgba(255, 77, 58, 0.05), transparent 50%),
+        var(--bg-elev);
+    }
+    .package-tile figure { background: #ece5d6; }
+    .split-media { background: #ece5d6; }
+    .checklist li::before { box-shadow: none; }
+    .btn-ghost { border-color: rgba(36, 30, 23, 0.3); color: var(--text); }
+    .btn-ghost:hover { border-color: var(--coral); background: rgba(255, 77, 58, 0.08); }
+
+    /* Anatomy keeps the night — a deliberate dark moment inside the light page */
+    .section-night { background: var(--night); color: #f4f1ec; }
+    .section-night .section-lead { color: #a8a29a; }
+
+    .site-footer { background: var(--night); }
+    .footer-note { color: #a8a29a; }
+    .footer-nav a { color: #a8a29a; }
+
+    /* No JS reveal in static preview */
+    .reveal { opacity: 1; transform: none; }
+
+    /* Option switcher (preview chrome only) */
+    .option-switch {
+      position: fixed;
+      right: 1rem;
+      bottom: 1rem;
+      z-index: 90;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.55rem 0.75rem;
+      background: rgba(22, 17, 12, 0.92);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 999px;
+      backdrop-filter: blur(8px);
+      font-family: var(--font-brand);
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.75);
+    }
+    .option-switch a {
+      display: grid;
+      place-items: center;
+      width: 1.7rem;
+      height: 1.7rem;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #fff;
+    }
+    .option-switch a.is-active { background: var(--coral); border-color: var(--coral); }
+  </style>
+</head>
+<body>
+<div class="site-wrap">
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="option-1-daybreak.html">
+        <span class="brand-mark">LARK</span>
+        <span class="brand-sub">Kitchens</span>
+      </a>
+      <nav id="site-nav" class="site-nav">
+        <ul class="nav-list">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Packages</a></li>
+          <li><a href="#">Custom</a></li>
+          <li><a href="#">Grills &amp; Tools</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a class="nav-cta" href="#">Start a design</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-main">
+    <section class="hero">
+      <div class="hero-media" aria-hidden="true">
+        <img src="https://wordpress-1639387-6605884.cloudwaysapps.com/wp-content/themes/lark-kitchens/assets/images/hero/hero-night.jpg" alt="">
+      </div>
+      <div class="hero-content">
+        <p class="hero-brand">
+          <img class="hero-brand-img" src="https://wordpress-1639387-6605884.cloudwaysapps.com/wp-content/themes/lark-kitchens/assets/images/brand/lark-lockup.png" alt="Lark Kitchens">
+        </p>
+        <h1 class="hero-headline">Nights worth gathering for.</h1>
+        <p class="hero-copy">Outdoor kitchens engineered for unforgettable nights and a lifetime of memories.</p>
+        <div class="btn-row">
+          <a class="btn ember-glow" href="#">Order Your Kitchen</a>
+          <a class="btn btn-ghost" style="border-color:rgba(255,255,255,.4);color:#fff;" href="#">Start a design</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-bar">
+      <div class="trust-inner">
+        <div class="trust-item"><div><strong>Made in the USA</strong><span>American-built cabinetry</span></div></div>
+        <div class="trust-item"><div><strong>Weather-ready</strong><span>Engineered for every season</span></div></div>
+        <div class="trust-item"><div><strong>Patio or job site</strong><span>Delivered where you build</span></div></div>
+        <div class="trust-item"><div><strong>Secure ACH checkout</strong><span>Simple payment via Melio</span></div></div>
+      </div>
+    </div>
+
+    <section class="section section-elev">
+      <div class="section-inner">
+        <p class="section-kicker">Preconfigured packages</p>
+        <h2 class="section-title">Pick a layout. Host tonight.</h2>
+        <p class="section-lead">A dozen ready-to-order cabinetry packages — plus a custom path when your patio needs something all your own.</p>
+        <div class="package-grid">
+          <a class="package-tile" href="#">
+            <figure><img src="https://wordpress-1639387-6605884.cloudwaysapps.com/wp-content/themes/lark-kitchens/assets/images/packages/hearth-life.jpg" alt="The Hearth"></figure>
+            <h3>The Hearth</h3>
+            <p class="package-meta">Classic cookout island · Compact</p>
+            <p>A welcoming starter island with room for a grill cutout and storage that lights up any patio.</p>
+            <span class="link-cta">Order this package →</span>
+          </a>
+          <a class="package-tile" href="#">
+            <figure><img src="https://wordpress-1639387-6605884.cloudwaysapps.com/wp-content/themes/lark-kitchens/assets/images/packages/harbor-life.jpg" alt="The Harbor"></figure>
+            <h3>The Harbor</h3>
+            <p class="package-meta">Entertaining sideboard · Medium</p>
+            <p>Built for gatherings — generous counter run and cabinetry that keeps the party flowing.</p>
+            <span class="link-cta">Order this package →</span>
+          </a>
+          <a class="package-tile" href="#">
+            <figure><img src="https://wordpress-1639387-6605884.cloudwaysapps.com/wp-content/themes/lark-kitchens/assets/images/packages/ridge-life.jpg" alt="The Ridge"></figure>
+            <h3>The Ridge</h3>
+            <p class="package-meta">Straight-run workhorse · Medium</p>
+            <p>A confident linear layout with balanced storage for serious outdoor chefs.</p>
+            <span class="link-cta">Order this package →</span>
+          </a>
+          <a class="package-tile" href="#">
+            <figure><img src="https://wordpress-1639387-6605884.cloudwaysapps.com/wp-content/themes/lark-kitchens/assets/images/packages/gathering-life.jpg" alt="The Gathering"></figure>
+            <h3>The Gathering</h3>
+            <p class="package-meta">Full celebration kitchen · Large</p>
+            <p>Our most festive layout — room to cook, serve, and celebrate.</p>
+            <span class="link-cta">Order this package →</span>
+          </a>
+          <a class="package-tile" href="#">
+            <figure><img src="https://wordpress-1639387-6605884.cloudwaysapps.com/wp-content/themes/lark-kitchens/assets/images/packages/gathering-white.jpg" alt="The Ember"></figure>
+            <h3>The Ember</h3>
+            <p class="package-meta">Signature celebration kitchen</p>
+            <p>Our flagship package — maximum presence, maximum party.</p>
+            <span class="link-cta">Order this package →</span>
+          </a>
+          <a class="package-tile" href="#">
+            <figure><img src="https://wordpress-1639387-6605884.cloudwaysapps.com/wp-content/themes/lark-kitchens/assets/images/gallery/granite-white.jpg" alt="The Summit"></figure>
+            <h3>The Summit</h3>
+            <p class="package-meta">Granite-top classic · Medium</p>
+            <p>Granite counters and calm gray cabinetry for a patio that means business.</p>
+            <span class="link-cta">Order this package →</span>
+          </a>
+        </div>
+        <div class="btn-row" style="margin-top:2rem;">
+          <a class="btn" href="#">See all 12 packages</a>
+          <a class="btn btn-ghost" href="#">Design a custom layout</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner split">
+        <div class="split-media">
+          <img src="https://wordpress-1639387-6605884.cloudwaysapps.com/wp-content/themes/lark-kitchens/assets/images/details/detail-white-1.jpg" alt="White outdoor cabinetry detail">
+        </div>
+        <div>
+          <p class="section-kicker">Built for the backyard</p>
+          <h2 class="section-title">Cabinetry first. Celebration always.</h2>
+          <p class="section-lead" style="margin-bottom:1.25rem;">Weather-ready outdoor cabinets with clean lines and storage that keeps the party moving — drawers, doors, and pull-outs designed around real grilling nights.</p>
+          <ul class="checklist">
+            <li>White-labeled outdoor kitchen cabinetry</li>
+            <li>Preconfigured islands sized for real patios</li>
+            <li>Custom layouts when stock won’t cut it</li>
+            <li>ACH checkout via Melio after you place an order</li>
+          </ul>
+          <a class="btn" href="#">Start an order</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-elev">
+      <div class="section-inner split">
+        <div>
+          <p class="section-kicker">For homeowners</p>
+          <h2 class="section-title">Your backyard, headquarters.</h2>
+          <p class="section-lead" style="margin-bottom:1.25rem;">We help families make the most of every square foot of backyard — from Tuesday-night dinners to hosting the whole cul-de-sac.</p>
+          <ul class="checklist">
+            <li>Twelve preconfigured packages built to serve every need</li>
+            <li>Full design services for custom orders</li>
+            <li>Guidance from first sketch to first cookout</li>
+            <li>Weather-ready cabinetry for seasons of stories</li>
+          </ul>
+          <div class="btn-row">
+            <a class="btn" href="#">Browse packages</a>
+            <a class="btn btn-ghost" href="#">Start a custom design</a>
+          </div>
+        </div>
+        <div class="split-media">
+          <img src="https://wordpress-1639387-6605884.cloudwaysapps.com/wp-content/themes/lark-kitchens/assets/images/gallery/patio-2.jpg" alt="Family backyard outdoor kitchen">
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner split">
+        <div class="split-media">
+          <img src="https://wordpress-1639387-6605884.cloudwaysapps.com/wp-content/themes/lark-kitchens/assets/images/gallery/patio-1.jpg" alt="Covered pavilion outdoor kitchen installation">
+        </div>
+        <div>
+          <p class="section-kicker">For contractors</p>
+          <h2 class="section-title">Your job site, our cabinetry.</h2>
+          <p class="section-lead" style="margin-bottom:1.25rem;">We back you from quote to final walkthrough — with cabinetry delivered right to the job site and a program built around your success.</p>
+          <ul class="checklist">
+            <li>Sales support that helps you win the project</li>
+            <li>Delivery straight to your job site</li>
+            <li>Contractor program with dedicated resources</li>
+            <li>Installation support for clean punch lists</li>
+          </ul>
+          <a class="btn" href="#">Join the contractor program</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-night anatomy-section">
+      <div class="section-inner">
+        <p class="section-kicker">The vibe</p>
+        <h2 class="section-title">Anatomy of a great night.</h2>
+        <div class="anatomy">
+          <img class="anatomy-scene" src="https://wordpress-1639387-6605884.cloudwaysapps.com/wp-content/themes/lark-kitchens/assets/images/hero/anatomy-cabinetry-v3.jpg" alt="Night outdoor kitchen with white Lark cabinetry">
+          <div class="hotspot" style="--x:38%; --y:44%; --lift:clamp(56px, 11vw, 140px);">
+            <span class="hotspot-card">Where the<br>show happens</span>
+            <span class="hotspot-line" aria-hidden="true"></span>
+            <span class="hotspot-dot" aria-hidden="true"></span>
+          </div>
+          <div class="hotspot" style="--x:54%; --y:46%; --lift:clamp(48px, 9vw, 115px);">
+            <span class="hotspot-card">Where everyone<br>ends up standing</span>
+            <span class="hotspot-line" aria-hidden="true"></span>
+            <span class="hotspot-dot" aria-hidden="true"></span>
+          </div>
+          <div class="hotspot" style="--x:63%; --y:60%; --lift:clamp(30px, 5vw, 65px);">
+            <span class="hotspot-card">Cold ones,<br>arm's reach</span>
+            <span class="hotspot-line" aria-hidden="true"></span>
+            <span class="hotspot-dot" aria-hidden="true"></span>
+          </div>
+          <div class="hotspot" style="--x:84%; --y:52%; --lift:clamp(40px, 7vw, 90px);">
+            <span class="hotspot-card">Low &amp; slow<br>lives here</span>
+            <span class="hotspot-line" aria-hidden="true"></span>
+            <span class="hotspot-dot" aria-hidden="true"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-elev">
+      <div class="section-inner split">
+        <div>
+          <p class="section-kicker">Coming soon</p>
+          <h2 class="section-title">Grills &amp; tools</h2>
+          <p class="section-lead">Cabinetry is the foundation. Next up: grills and outdoor tools that complete the Lark setup — same energetic spirit, same American backyard pride.</p>
+          <a class="btn btn-ghost" href="#">Get notified</a>
+        </div>
+        <div class="split-media">
+          <img src="https://wordpress-1639387-6605884.cloudwaysapps.com/wp-content/themes/lark-kitchens/assets/images/gallery/patio-4.jpg" alt="Outdoor kitchen ready for grilling">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <p class="footer-brand">
+          <span class="brand-mark">LARK</span>
+          <span class="brand-sub">Kitchens</span>
+        </p>
+        <p class="footer-note">Outdoor cabinetry for celebrations that spill into the night. Option 1 static preview — Ember Daybreak.</p>
+      </div>
+      <nav class="footer-nav">
+        <a href="#">Packages</a>
+        <a href="#">Custom</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+  </footer>
+</div>
+
+<div class="option-switch">
+  <span>Option</span>
+  <a class="is-active" href="option-1-daybreak.html">1</a>
+  <a href="option-2-daylight.html">2</a>
+  <a href="option-3-twilight.html">3</a>
+</div>
+</body>
+</html>
