@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lark Kitchens — Option 6: Field House</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================================
+       OPTION 6 — FIELD HOUSE
+       Pottery Barn structure with Boden's warmth: white base,
+       centered serif logo, promo trio, category tiles with white
+       label bars, packages on soft-color tile backgrounds.
+       ============================================================ */
+    :root {
+      --paper: #ffffff;
+      --shell: #f7f4ee;
+      --ink: #2b2925;
+      --ink-soft: #6d685f;
+      --rule: rgba(43, 41, 37, 0.14);
+      --clay: #c15f3c;
+      --sage-bg: #e7ebdd;
+      --sky-bg: #e2eaec;
+      --sand-bg: #f0e8d9;
+      --rose-bg: #f2e4dc;
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "Figtree", "Helvetica Neue", sans-serif;
+      --max: 1280px;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); line-height: 1.6; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .announce { background: var(--ink); color: #fff; text-align: center; font-size: 0.78rem; letter-spacing: 0.04em; padding: 0.55rem 1rem; }
+    .announce b { color: #f3c8b5; }
+
+    .masthead { text-align: center; padding: 1.9rem 1rem 1rem; }
+    .wordmark { font-family: var(--serif); font-weight: 600; font-size: clamp(1.8rem, 3.8vw, 2.5rem); letter-spacing: 0.3em; margin-right: -0.3em; text-transform: uppercase; }
+    .nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.9rem; padding: 0.85rem 1rem; border-block: 1px solid var(--rule); font-size: 0.76rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; }
+    .nav a:hover { color: var(--clay); }
+    .nav .hot { color: var(--clay); }
+
+    .promo-trio { max-width: var(--max); margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: 1px solid var(--rule); }
+    @media (max-width: 780px) { .promo-trio { grid-template-columns: 1fr; } }
+    .promo { text-align: center; padding: 0.95rem 1rem; font-size: 0.82rem; }
+    .promo + .promo { border-left: 1px solid var(--rule); }
+    @media (max-width: 780px) { .promo + .promo { border-left: 0; border-top: 1px solid var(--rule); } }
+    .promo b { display: block; font-size: 0.9rem; }
+    .promo a { color: var(--clay); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+
+    .hero { position: relative; min-height: 74vh; display: grid; place-items: center; overflow: hidden; }
+    .hero img.bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(30, 26, 20, 0.15), rgba(30, 26, 20, 0.38)); }
+    .hero-content { position: relative; z-index: 2; text-align: center; color: #fff; padding: 4rem 1.5rem; }
+    .hero-eyebrow { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: clamp(1.15rem, 2.4vw, 1.6rem); margin: 0 0 0.5rem; }
+    .hero h1 { font-family: var(--serif); font-weight: 600; font-size: clamp(2.6rem, 6.5vw, 4.8rem); letter-spacing: 0.06em; text-transform: uppercase; line-height: 1.1; margin: 0 0 1.5rem; }
+    .btn { display: inline-block; background: #fff; color: var(--ink); font-size: 0.76rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.95rem 1.8rem; border-radius: 3px; }
+    .btn:hover { background: var(--shell); }
+    .btn.clay { background: var(--clay); color: #fff; margin-left: 0.7rem; }
+    .btn.clay:hover { background: #a94f30; }
+
+    .sec-head { text-align: center; padding: 3.8rem 1.5rem 2rem; }
+    .sec-head h2 { font-family: var(--serif); font-weight: 600; font-size: clamp(1.8rem, 3.8vw, 2.6rem); margin: 0 0 0.5rem; }
+    .sec-head p { color: var(--ink-soft); margin: 0; }
+
+    .shelf { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem 1.5rem; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.3rem; }
+    @media (max-width: 1000px) { .shelf { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .shelf { grid-template-columns: 1fr; } }
+    .card { text-align: left; }
+    .card figure { margin: 0 0 0.9rem; border-radius: 8px; overflow: hidden; aspect-ratio: 1; display: grid; place-items: center; padding: 1.1rem; }
+    .card img { width: 100%; height: 100%; object-fit: contain; transition: transform 0.5s ease; }
+    .card:hover img { transform: scale(1.05); }
+    .card h3 { font-family: var(--serif); font-weight: 600; font-size: 1.25rem; margin: 0 0 0.15rem; }
+    .card p.meta { font-size: 0.78rem; color: var(--ink-soft); margin: 0 0 0.45rem; letter-spacing: 0.04em; }
+    .card .req { font-size: 0.74rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--clay); text-decoration: underline; text-underline-offset: 3px; }
+    .shelf-cta { text-align: center; padding: 0.8rem 1.5rem 3.5rem; }
+    .btn-dark { display: inline-block; background: var(--ink); color: #fff; font-size: 0.76rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.95rem 1.8rem; border-radius: 3px; }
+    .btn-dark:hover { background: #000; }
+
+    .cats { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem 4rem; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.3rem; }
+    @media (max-width: 1000px) { .cats { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .cats { grid-template-columns: 1fr; } }
+    .cat { position: relative; }
+    .cat figure { margin: 0; aspect-ratio: 3 / 4; overflow: hidden; background: var(--shell); }
+    .cat img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+    .cat:hover img { transform: scale(1.05); }
+    .cat-label { background: #fff; border: 1px solid var(--rule); border-top: 0; text-align: center; padding: 0.85rem 0.5rem; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+
+    .feature { background: var(--shell); padding: 4.5rem 1.5rem; }
+    .feature-inner { max-width: var(--max); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+    @media (max-width: 880px) { .feature-inner { grid-template-columns: 1fr; } }
+    .feature figure { margin: 0; border-radius: 8px; overflow: hidden; }
+    .feature-eyebrow { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--clay); margin: 0 0 0.9rem; }
+    .feature h2 { font-family: var(--serif); font-weight: 600; font-size: clamp(1.9rem, 3.8vw, 2.7rem); line-height: 1.15; margin: 0 0 1rem; }
+    .feature p { color: var(--ink-soft); margin: 0 0 1.6rem; }
+    .finish-row { display: flex; flex-wrap: wrap; gap: 1.4rem; margin: 0 0 1.8rem; }
+    .finish { display: grid; justify-items: center; gap: 0.5rem; }
+    .finish-chip { width: 3.2rem; height: 3.2rem; border-radius: 50%; border: 1px solid rgba(43, 41, 37, 0.2); box-shadow: inset 0 -7px 12px rgba(0, 0, 0, 0.12); }
+    .finish span { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft); }
+
+    .crew { position: relative; min-height: 56vh; display: grid; place-items: center; overflow: hidden; }
+    .crew img.bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .crew::after { content: ""; position: absolute; inset: 0; background: rgba(30, 26, 20, 0.4); }
+    .crew-inner { position: relative; z-index: 2; text-align: center; color: #fff; max-width: 44rem; padding: 4rem 1.5rem; }
+    .crew-inner .hero-eyebrow { color: #f3c8b5; }
+    .crew-inner h2 { font-family: var(--serif); font-weight: 600; font-size: clamp(2rem, 4.6vw, 3.2rem); margin: 0 0 0.9rem; }
+    .crew-inner p { color: rgba(255, 255, 255, 0.92); margin: 0 0 1.7rem; }
+
+    .duo { max-width: var(--max); margin: 0 auto; padding: 4rem 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    @media (max-width: 880px) { .duo { grid-template-columns: 1fr; } }
+    .duo-card { border: 1px solid var(--rule); border-radius: 8px; padding: 2.4rem; background: #fff; }
+    .duo-card.homeowner { background: var(--sage-bg); border: 0; }
+    .duo-card.contractor { background: var(--sand-bg); border: 0; }
+    .duo-card h3 { font-family: var(--serif); font-weight: 600; font-size: 1.7rem; margin: 0 0 0.6rem; }
+    .duo-card p { color: var(--ink-soft); margin: 0 0 1.4rem; }
+    .duo-card a { font-size: 0.74rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
+
+    .footer { background: var(--ink); color: #cfc9c0; padding: 3.5rem 1.5rem 2.5rem; }
+    .footer-grid { max-width: var(--max); margin: 0 auto; display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 2.5rem; }
+    @media (max-width: 780px) { .footer-grid { grid-template-columns: 1fr; } }
+    .footer .wordmark { color: #fff; font-size: 1.35rem; }
+    .footer h4 { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: #fff; margin: 0 0 1rem; }
+    .footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.55rem; font-size: 0.88rem; }
+    .footer-note { max-width: var(--max); margin: 2.5rem auto 0; padding-top: 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.15); font-size: 0.78rem; color: #98938a; }
+
+    .option-switch {
+      position: fixed; right: 1rem; bottom: 1rem; z-index: 90;
+      display: flex; align-items: center; gap: 0.45rem;
+      padding: 0.55rem 0.75rem;
+      background: rgba(43, 41, 37, 0.92); border-radius: 999px;
+      font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.75);
+    }
+    .option-switch a { display: grid; place-items: center; width: 1.7rem; height: 1.7rem; border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.3); color: #fff; }
+    .option-switch a.is-active { background: var(--clay); border-color: var(--clay); }
+  </style>
+</head>
+<body>
+
+<div class="announce"><b>Free design services</b> on every kitchen &nbsp;·&nbsp; Made in the USA &nbsp;·&nbsp; Delivered to patio or job site</div>
+
+<header class="masthead">
+  <a href="option-6-fieldhouse.html" class="wordmark">Lark Kitchens</a>
+</header>
+<nav class="nav">
+  <a href="#">New</a>
+  <a href="#">Packages</a>
+  <a href="#">Custom</a>
+  <a href="#">Finishes</a>
+  <a href="#">Grills &amp; Tools</a>
+  <a href="#">Trade</a>
+  <a class="hot" href="#">Design Services</a>
+</nav>
+
+<div class="promo-trio">
+  <div class="promo"><b>Twelve ready-to-order packages</b><a href="#">Shop packages ›</a></div>
+  <div class="promo"><b>Going custom? Designers included</b><a href="#">Start a design ›</a></div>
+  <div class="promo"><b>Contractor program</b><a href="#">Join the trade ›</a></div>
+</div>
+
+<main>
+  <section class="hero">
+    <img class="bg" src="https://wordpress-1639387-6605884.cloudwaysapps.com/wp-content/themes/lark-kitchens/assets/images/packages/gathering-life.jpg" alt="">
+    <div class="hero-content">
+      <p class="hero-eyebrow">the backyard collection</p>
+      <h1>The Great<br>American Backyard</h1>
+      <div>
+        <a class="btn" href="#">Shop the Packages</a>
+        <a class="btn clay" href="#">Start a Design</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="sec-head">
+    <h2>Just landed: the twelve</h2>
+    <p>Preconfigured outdoor kitchens, sized for real patios — pick yours and host this season.</p>
+  </div>
+  <section class="shelf">
+    <a class="card" href="#">
+      <figure style="background: var(--sage-bg);"><img src="https://wordpress-1639387-6605884.cloudwaysapps.com/wp-content/themes/lark-kitchens/assets/images/packages/hearth-shadow.jpg" alt="The Hearth"></figure>
+      <h3>The Hearth</h3>
+      <p class="meta">Classic cookout island · Compact</p>
+      <span class="req">Request pricing</span>
+    </a>
+    <a class="card" href="#">
+      <figure style="background: var(--sky-bg);"><img src="https://wordpress-1639387-6605884.cloudwaysapps.com/wp-content/themes/lark-kitchens/assets/images/packages/harbor-shadow.jpg" alt="The Harbor"></figure>
+      <h3>The Harbor</h3>
+      <p class="meta">Entertaining sideboard · Medium</p>
+      <span class="req">Request pricing</span>
+    </a>
+    <a class="card" href="#">
+      <figure style="background: var(--sand-bg);"><img src="https://wordpress-1639387-6605884.cloudwaysapps.com/wp-content/themes/lark-kitchens/assets/images/packages/ridge-shadow.jpg" alt="The Ridge"></figure>
+      <h3>The Ridge</h3>
+      <p class="meta">Straight-run workhorse · Medium</p>
+      <span class="req">Request pricing</span>
+    </a>
+    <a class="card" href="#">
+      <figure style="background: var(--rose-bg);"><img src="https://wordpress-1639387-6605884.cloudwaysapps.com/wp-content/themes/lark-kitchens/assets/images/packages/gathering-shadow.jpg" alt="The Gathering"></figure>
+      <h3>The Gathering</h3>
+      <p class="meta">Full celebration kitchen · Large</p>
+      <span class="req">Request pricing</span>
+    </a>
+  </section>
+  <div class="shelf-cta"><a class="btn-dark" href="#">See all twelve packages</a></div>
+
+  <div class="sec-head">
+    <h2>Shop by layout</h2>
+    <p>Every patio is different — start with the footprint that fits yours.</p>
+  </div>
+  <section class="cats">
+    <a class="cat" href="#">
+      <figure><img src="https://wordpress-1639387-6605884.cloudwaysapps.com/wp-content/themes/lark-kitchens/assets/images/packages/ridge-life.jpg" alt="Straight run outdoor kitchen"></figure>
+      <div class="cat-label">Straight Run</div>
+    </a>
+    <a class="cat" href="#">
+      <figure><img src="https://wordpress-1639387-6605884.cloudwaysapps.com/wp-content/themes/lark-kitchens/assets/images/gallery/patio-3.jpg" alt="L-shaped outdoor kitchen"></figure>
+      <div class="cat-label">L-Shaped</div>
+    </a>
+    <a class="cat" href="#">
+      <figure><img src="https://wordpress-1639387-6605884.cloudwaysapps.com/wp-content/themes/lark-kitchens/assets/images/gallery/patio-1.jpg" alt="U-shaped outdoor kitchen"></figure>
+      <div class="cat-label">U-Shaped</div>
+    </a>
+    <a class="cat" href="#">
+      <figure><img src="https://wordpress-1639387-6605884.cloudwaysapps.com/wp-content/themes/lark-kitchens/assets/images/gallery/patio-2.jpg" alt="Galley outdoor kitchen"></figure>
+      <div class="cat-label">Galley</div>
+    </a>
+  </section>
+
+  <section class="feature">
+    <div class="feature-inner">
+      <figure><img src="https://wordpress-1639387-6605884.cloudwaysapps.com/wp-content/themes/lark-kitchens/assets/images/details/detail-white-1.jpg" alt="White outdoor cabinetry detail"></figure>
+      <div>
+        <p class="feature-eyebrow">Finishes &amp; build</p>
+        <h2>Weather-ready. Backyard-proud.</h2>
+        <p>Clean lines, storage that keeps the party moving, and powder-coat finishes chosen to live outside for decades of dinners.</p>
+        <div class="finish-row">
+          <div class="finish"><div class="finish-chip" style="background:#8a9377;"></div><span>Sage</span></div>
+          <div class="finish"><div class="finish-chip" style="background:#f4f2ec;"></div><span>Cloud</span></div>
+          <div class="finish"><div class="finish-chip" style="background:#4a4f55;"></div><span>Slate</span></div>
+          <div class="finish"><div class="finish-chip" style="background:#cfc2a8;"></div><span>Sand</span></div>
+          <div class="finish"><div class="finish-chip" style="background:#2e2b28;"></div><span>Graphite</span></div>
+          <div class="finish"><div class="finish-chip" style="background:#c15f3c;"></div><span>Ember</span></div>
+        </div>
+        <a class="btn-dark" href="#">Order finish samples</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="crew">
+    <img class="bg" src="https://i.postimg.cc/gcQ9fHq1/hero-dusk.jpg" alt="">
+    <div class="crew-inner">
+      <p class="hero-eyebrow">the lark design crew</p>
+      <h2>Dream it up. We'll draw it out.</h2>
+      <p>Free one-on-one design help for every kitchen — send us your patio photos and measurements, and our designers do the rest.</p>
+      <a class="btn" href="#">Book a free consultation</a>
+    </div>
+  </section>
+
+  <section class="duo">
+    <div class="duo-card homeowner">
+      <h3>For homeowners</h3>
+      <p>Your backyard, headquarters. Twelve packages for every need, full design services for custom orders, and guidance from first sketch to first cookout.</p>
+      <a href="#">Browse packages</a>
+    </div>
+    <div class="duo-card contractor">
+      <h3>For contractors</h3>
+      <p>Your job site, our cabinetry. Sales support that wins bids, delivery straight to the site, and a program built around your success.</p>
+      <a href="#">Join the contractor program</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <p class="wordmark" style="margin:0 0 0.8rem;">Lark Kitchens</p>
+      <p style="font-size:0.88rem; margin:0; max-width:22rem;">Outdoor cabinetry for celebrations that spill into the night. Option 6 static preview — Field House.</p>
+    </div>
+    <div>
+      <h4>Shop</h4>
+      <ul><li><a href="#">Packages</a></li><li><a href="#">Custom</a></li><li><a href="#">Finishes</a></li><li><a href="#">Grills &amp; Tools</a></li></ul>
+    </div>
+    <div>
+      <h4>Help</h4>
+      <ul><li><a href="#">Design Services</a></li><li><a href="#">Delivery</a></li><li><a href="#">Trade Program</a></li><li><a href="#">Contact</a></li></ul>
+    </div>
+  </div>
+  <div class="footer-note">© Lark Kitchens · ACH checkout via Melio · Made in the USA</div>
+</footer>
+
+<div class="option-switch">
+  <span>Option</span>
+  <a href="option-4-heritage.html">4</a>
+  <a href="option-5-gallery.html">5</a>
+  <a class="is-active" href="option-6-fieldhouse.html">6</a>
+</div>
+</body>
+</html>
