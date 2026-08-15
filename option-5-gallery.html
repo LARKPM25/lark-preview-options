@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lark Kitchens — Option 5: Gallery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================================
+       OPTION 5 — GALLERY
+       RH-led: ultra-minimal luxury. Full-screen image panels,
+       centered letter-spaced serif captions, underlined text links
+       instead of buttons, monochrome warm-gray palette.
+       ============================================================ */
+    :root {
+      --linen: #f7f5f1;
+      --linen-deep: #edeae3;
+      --ink: #2c2a26;
+      --ink-soft: #7c776e;
+      --rule: rgba(44, 42, 38, 0.14);
+      --serif: "Marcellus", Georgia, serif;
+      --sans: "Jost", "Helvetica Neue", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--linen); color: var(--ink); font-family: var(--sans); font-weight: 300; line-height: 1.7; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .masthead { text-align: center; padding: 2.6rem 1rem 1.6rem; }
+    .wordmark {
+      font-family: var(--serif);
+      font-size: clamp(2.1rem, 4.5vw, 3rem);
+      letter-spacing: 0.55em;
+      margin-right: -0.55em;
+      text-transform: uppercase;
+    }
+    .wordmark-sub { display: block; font-family: var(--sans); font-weight: 400; font-size: 0.6rem; letter-spacing: 0.72em; margin-right: -0.72em; text-transform: uppercase; color: var(--ink-soft); margin-top: 0.5rem; }
+    .nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 2.6rem; padding: 1rem 1rem 1.4rem; border-bottom: 1px solid var(--rule); font-size: 0.7rem; font-weight: 400; letter-spacing: 0.32em; text-transform: uppercase; }
+    .nav a:hover { color: var(--ink-soft); }
+
+    .panel { position: relative; min-height: 88vh; display: grid; place-items: center; overflow: hidden; }
+    .panel img.bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .panel::after { content: ""; position: absolute; inset: 0; background: rgba(28, 25, 20, 0.26); }
+    .panel-inner { position: relative; z-index: 2; text-align: center; color: #fff; padding: 4rem 1.5rem; max-width: 52rem; }
+    .panel-kicker { font-size: 0.66rem; font-weight: 400; letter-spacing: 0.5em; margin-right: -0.5em; text-transform: uppercase; color: rgba(255, 255, 255, 0.85); margin: 0 0 1.2rem; }
+    .panel h1, .panel h2 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(2rem, 5vw, 3.6rem);
+      letter-spacing: 0.22em;
+      margin-right: -0.22em;
+      text-transform: uppercase;
+      line-height: 1.3;
+      margin: 0 0 1.4rem;
+    }
+    .panel p.lede { font-size: 1rem; font-weight: 300; color: rgba(255, 255, 255, 0.92); max-width: 34rem; margin: 0 auto 1.8rem; }
+    .link-under {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.34em;
+      margin-right: -0.34em;
+      text-transform: uppercase;
+      color: #fff;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.75);
+      padding-bottom: 0.35rem;
+    }
+    .link-under:hover { border-color: #fff; }
+
+    .interlude { text-align: center; padding: 6.5rem 1.5rem; max-width: 44rem; margin: 0 auto; }
+    .interlude p.kicker { font-size: 0.64rem; letter-spacing: 0.5em; margin-right: -0.5em; text-transform: uppercase; color: var(--ink-soft); margin: 0 0 1.4rem; font-weight: 400; }
+    .interlude h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.7rem, 3.6vw, 2.5rem); letter-spacing: 0.1em; line-height: 1.45; margin: 0 0 1.2rem; }
+    .interlude p.body { color: var(--ink-soft); margin: 0; }
+    .link-under-dark { display: inline-block; margin-top: 1.8rem; font-size: 0.68rem; letter-spacing: 0.34em; margin-right: -0.34em; text-transform: uppercase; border-bottom: 1px solid var(--ink); padding-bottom: 0.35rem; font-weight: 400; }
+
+    .collection { max-width: 1400px; margin: 0 auto; padding: 0 1.5rem 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem 2rem; }
+    @media (max-width: 820px) { .collection { grid-template-columns: 1fr; } }
+    .work { text-align: center; }
+    .work figure { margin: 0 0 1.4rem; aspect-ratio: 5 / 4; overflow: hidden; background: var(--linen-deep); }
+    .work img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; }
+    .work:hover img { transform: scale(1.03); }
+    .work h3 { font-family: var(--serif); font-weight: 400; font-size: 1.15rem; letter-spacing: 0.3em; margin-right: -0.3em; text-transform: uppercase; margin: 0 0 0.4rem; }
+    .work p { font-size: 0.82rem; color: var(--ink-soft); margin: 0; letter-spacing: 0.06em; }
+
+    .finishes-quiet { background: var(--linen-deep); text-align: center; padding: 5.5rem 1.5rem; }
+    .finishes-quiet h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.6rem, 3.4vw, 2.3rem); letter-spacing: 0.24em; margin-right: -0.24em; text-transform: uppercase; margin: 0 0 2.6rem; }
+    .finish-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 2.6rem; margin-bottom: 2.4rem; }
+    .finish { display: grid; justify-items: center; gap: 0.8rem; }
+    .finish-chip { width: 3.8rem; height: 3.8rem; border-radius: 50%; border: 1px solid rgba(44, 42, 38, 0.2); }
+    .finish span { font-size: 0.6rem; letter-spacing: 0.32em; margin-right: -0.32em; text-transform: uppercase; color: var(--ink-soft); }
+
+    .footer { text-align: center; padding: 4.5rem 1.5rem 3rem; border-top: 1px solid var(--rule); }
+    .footer .wordmark { font-size: 1.4rem; }
+    .footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 2.2rem; margin: 1.8rem 0 2rem; font-size: 0.64rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--ink-soft); }
+    .footer-note { font-size: 0.72rem; color: var(--ink-soft); letter-spacing: 0.08em; }
+
+    .option-switch {
+      position: fixed; right: 1rem; bottom: 1rem; z-index: 90;
+      display: flex; align-items: center; gap: 0.45rem;
+      padding: 0.55rem 0.75rem;
+      background: rgba(44, 42, 38, 0.92); border-radius: 999px;
+      font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.75); font-family: var(--sans); font-weight: 400;
+    }
+    .option-switch a { display: grid; place-items: center; width: 1.7rem; height: 1.7rem; border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.3); color: #fff; }
+    .option-switch a.is-active { background: #fff; color: var(--ink); border-color: #fff; }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <a href="option-5-gallery.html" class="wordmark">Lark<span class="wordmark-sub">Outdoor Kitchens</span></a>
+</header>
+<nav class="nav">
+  <a href="#">Collections</a>
+  <a href="#">Custom</a>
+  <a href="#">Finishes</a>
+  <a href="#">Design Services</a>
+  <a href="#">Trade</a>
+  <a href="#">Contact</a>
+</nav>
+
+<main>
+  <section class="panel">
+    <img class="bg" src="https://i.postimg.cc/gcQ9fHq1/hero-dusk.jpg" alt="">
+    <div class="panel-inner">
+      <p class="panel-kicker">Lark Kitchens</p>
+      <h1>The Outdoor<br>Kitchen Collection</h1>
+      <a class="link-under" href="#">Explore the Collection</a>
+    </div>
+  </section>
+
+  <section class="interlude">
+    <p class="kicker">Our Philosophy</p>
+    <h2>Cabinetry conceived for the American backyard — engineered for weather, designed for gathering.</h2>
+    <p class="body">Twelve preconfigured islands and a full custom atelier, delivered to your patio or your job site.</p>
+  </section>
+
+  <section class="panel" style="min-height:80vh;">
+    <img class="bg" src="https://wordpress-1639387-6605884.cloudwaysapps.com/wp-content/themes/lark-kitchens/assets/images/gallery/patio-1.jpg" alt="">
+    <div class="panel-inner">
+      <h2>Designed for<br>the Long Evening</h2>
+      <a class="link-under" href="#">The Lark Difference</a>
+    </div>
+  </section>
+
+  <section class="interlude" style="padding-bottom:3.5rem;">
+    <p class="kicker">The Collection</p>
+    <h2>Twelve configurations</h2>
+    <p class="body">Each island preconfigured, proportioned to real patios, and finished to live outside.</p>
+  </section>
+
+  <section class="collection">
+    <a class="work" href="#">
+      <figure><img src="https://wordpress-1639387-6605884.cloudwaysapps.com/wp-content/themes/lark-kitchens/assets/images/packages/hearth-life.jpg" alt="The Hearth"></figure>
+      <h3>The Hearth</h3>
+      <p>Classic cookout island · Compact</p>
+    </a>
+    <a class="work" href="#">
+      <figure><img src="https://wordpress-1639387-6605884.cloudwaysapps.com/wp-content/themes/lark-kitchens/assets/images/packages/gathering-life.jpg" alt="The Gathering"></figure>
+      <h3>The Gathering</h3>
+      <p>Full celebration kitchen · Large</p>
+    </a>
+    <a class="work" href="#">
+      <figure><img src="https://wordpress-1639387-6605884.cloudwaysapps.com/wp-content/themes/lark-kitchens/assets/images/gallery/granite-white.jpg" alt="The Summit"></figure>
+      <h3>The Summit</h3>
+      <p>Granite-top classic · Medium</p>
+    </a>
+    <a class="work" href="#">
+      <figure><img src="https://wordpress-1639387-6605884.cloudwaysapps.com/wp-content/themes/lark-kitchens/assets/images/packages/harbor-life.jpg" alt="The Harbor"></figure>
+      <h3>The Harbor</h3>
+      <p>Entertaining sideboard · Medium</p>
+    </a>
+  </section>
+  <div style="text-align:center; padding-bottom:5rem;">
+    <a class="link-under-dark" href="#">View all twelve</a>
+  </div>
+
+  <section class="finishes-quiet">
+    <h2>The Finishes</h2>
+    <div class="finish-row">
+      <div class="finish"><div class="finish-chip" style="background:#8a9377;"></div><span>Sage</span></div>
+      <div class="finish"><div class="finish-chip" style="background:#f4f2ec;"></div><span>Cloud</span></div>
+      <div class="finish"><div class="finish-chip" style="background:#4a4f55;"></div><span>Slate</span></div>
+      <div class="finish"><div class="finish-chip" style="background:#cfc2a8;"></div><span>Sand</span></div>
+      <div class="finish"><div class="finish-chip" style="background:#2e2b28;"></div><span>Graphite</span></div>
+      <div class="finish"><div class="finish-chip" style="background:#b5482e;"></div><span>Ember</span></div>
+    </div>
+    <a class="link-under-dark" href="#" style="margin-top:0;">Order Samples</a>
+  </section>
+
+  <section class="panel" style="min-height:74vh;">
+    <img class="bg" src="https://wordpress-1639387-6605884.cloudwaysapps.com/wp-content/themes/lark-kitchens/assets/images/gallery/patio-2.jpg" alt="">
+    <div class="panel-inner">
+      <h2>Complimentary<br>Design Consultation</h2>
+      <p class="lede">Our designers shape cabinetry to your patio, your appliances, and the way you host — from first sketch to first cookout.</p>
+      <a class="link-under" href="#">Request a Consultation</a>
+    </div>
+  </section>
+
+  <section class="interlude" style="padding: 5rem 1.5rem;">
+    <p class="kicker">For the Trade</p>
+    <h2>A program built around the professional.</h2>
+    <p class="body">Sales support through the bid, delivery to the job site, and installation support for clean punch lists.</p>
+    <a class="link-under-dark" href="#">Join the Trade Program</a>
+  </section>
+</main>
+
+<footer class="footer">
+  <p class="wordmark" style="margin:0;">Lark</p>
+  <div class="footer-links">
+    <a href="#">Collections</a>
+    <a href="#">Custom</a>
+    <a href="#">Finishes</a>
+    <a href="#">Design Services</a>
+    <a href="#">Trade</a>
+    <a href="#">Contact</a>
+  </div>
+  <p class="footer-note">© Lark Kitchens · Outdoor cabinetry · Option 5 static preview — Gallery</p>
+</footer>
+
+<div class="option-switch">
+  <span>Option</span>
+  <a href="option-4-heritage.html">4</a>
+  <a class="is-active" href="option-5-gallery.html">5</a>
+  <a href="option-6-fieldhouse.html">6</a>
+</div>
+</body>
+</html>
