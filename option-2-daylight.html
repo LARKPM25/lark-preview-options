@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lark Kitchens — Option 2: Full Daylight</title>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=Manrope:wght@300;400;500;600;700&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://wordpress-1639387-6605884.cloudwaysapps.com/wp-content/themes/lark-kitchens/assets/css/main.css">
+  <style>
+    /* ============================================================
+       OPTION 2 — FULL DAYLIGHT
+       Light and editorial end to end, in line with Danver and
+       Urban Bonfire. Terracotta replaces neon coral; the night
+       photography retires in favor of daylight product clarity.
+       ============================================================ */
+    :root {
+      --bg: #fdfcf8;
+      --bg-elev: #f4efe4;
+      --bg-soft: #ffffff;
+      --text: #23261e;
+      --muted: #6e6d60;
+      --coral: #d9472b;
+      --coral-hot: #c03a20;
+      --ember: #d9472b;
+      --line: rgba(35, 38, 30, 0.13);
+      --deep: #23271f;
+    }
+
+    body { background: var(--bg); color: var(--text); }
+
+    /* Light sticky header */
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto;
+      padding: 0.85rem 1.5rem;
+      background: rgba(253, 252, 248, 0.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .brand { color: var(--text); }
+    .brand-sub { color: var(--muted); }
+    .nav-list a { color: var(--text); }
+    .nav-cta {
+      display: inline-flex;
+      padding: 0.6rem 1.1rem;
+      border-radius: var(--radius);
+      background: var(--coral);
+      color: #fff !important;
+      font-family: var(--font-brand);
+      font-size: 0.66rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    .nav-cta:hover { background: var(--coral-hot); }
+
+    /* Editorial split hero */
+    .hero2 {
+      padding: 7.5rem 1.5rem 4rem;
+      background: linear-gradient(180deg, #f4efe4 0%, var(--bg) 100%);
+    }
+    .hero2-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    @media (max-width: 900px) { .hero2-inner { grid-template-columns: 1fr; } }
+    .hero2-kicker {
+      font-family: var(--font-brand);
+      color: var(--coral);
+      text-transform: uppercase;
+      letter-spacing: 0.24em;
+      font-size: 0.72rem;
+      font-weight: 700;
+      margin: 0 0 1rem;
+    }
+    .hero2 h1 {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: clamp(2.9rem, 6.5vw, 4.8rem);
+      line-height: 1.05;
+      letter-spacing: -0.005em;
+      margin: 0 0 1.1rem;
+      max-width: 13ch;
+    }
+    .hero2-copy { max-width: 27rem; color: var(--muted); font-size: 1.1rem; margin: 0 0 1.9rem; }
+    .hero2-media { border-radius: 10px; overflow: hidden; box-shadow: 0 30px 60px -30px rgba(35, 38, 30, 0.4); }
+    .hero2-media img { width: 100%; height: 100%; min-height: 420px; object-fit: cover; }
+
+    .btn { box-shadow: none; }
+    .btn:hover { box-shadow: 0 12px 24px -12px rgba(217, 71, 43, 0.55); }
+    .ember-glow { animation: none; }
+    .btn-ghost { border-color: rgba(35, 38, 30, 0.3); color: var(--text); }
+    .btn-ghost:hover { border-color: var(--coral); background: rgba(217, 71, 43, 0.07); }
+
+    /* Trust bar */
+    .trust-bar { background: var(--bg-soft); border-block: 1px solid var(--line); padding: 1.4rem 1.5rem; }
+    .trust-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+    }
+    @media (max-width: 860px) { .trust-inner { grid-template-columns: repeat(2, 1fr); } }
+    .trust-item { display: flex; align-items: center; gap: 0.7rem; }
+    .trust-item::before { content: ""; flex: none; width: 0.6rem; height: 0.6rem; background: var(--coral); border-radius: 50%; }
+    .trust-item strong { display: block; font-size: 0.92rem; }
+    .trust-item span { display: block; color: var(--muted); font-size: 0.78rem; }
+
+    /* Sections */
+    .section-dark { background: var(--bg); }
+    .section-elev { background: var(--bg-elev); }
+    .package-tile figure { background: #eae4d5; border-radius: 8px; }
+    .package-tile { border-bottom-color: var(--line); }
+    .split-media { background: #eae4d5; border-radius: 10px; }
+    .split-media img { border-radius: 10px; }
+    .checklist li::before { box-shadow: none; border-radius: 50%; }
+
+    /* Finishes strip */
+    .finishes { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 0.5rem; }
+    .finish { display: grid; justify-items: center; gap: 0.55rem; }
+    .finish-chip {
+      width: 3.4rem;
+      height: 3.4rem;
+      border-radius: 50%;
+      border: 1px solid rgba(35, 38, 30, 0.18);
+      box-shadow: inset 0 -8px 14px rgba(0, 0, 0, 0.12);
+    }
+    .finish span {
+      font-family: var(--font-brand);
+      font-size: 0.58rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* Daylight anatomy hotspots */
+    .anatomy { background: #eae4d5; border-radius: 10px; }
+    .hotspot-card {
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid rgba(217, 71, 43, 0.45);
+      color: var(--text);
+      backdrop-filter: none;
+      box-shadow: 0 10px 25px -12px rgba(35, 38, 30, 0.45);
+    }
+    .hotspot-dot {
+      background: var(--coral);
+      box-shadow: 0 0 0 6px rgba(217, 71, 43, 0.3), 0 0 0 12px rgba(217, 71, 43, 0.12);
+      animation: none;
+    }
+    .hotspot-line { background: linear-gradient(180deg, rgba(217, 71, 43, 0.85), rgba(217, 71, 43, 0.3)); }
+
+    .site-footer { background: var(--deep); }
+    .footer-note, .footer-nav a { color: #b9b8ab; }
+
+    .reveal { opacity: 1; transform: none; }
+
+    /* Option switcher (preview chrome only) */
+    .option-switch {
+      position: fixed;
+      right: 1rem;
+      bottom: 1rem;
+      z-index: 90;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.55rem 0.75rem;
+      background: rgba(35, 39, 31, 0.92);
+      border-radius: 999px;
+      backdrop-filter: blur(8px);
+      font-family: var(--font-brand);
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.75);
+    }
+    .option-switch a {
+      display: grid;
+      place-items: center;
+      width: 1.7rem;
+      height: 1.7rem;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #fff;
+    }
+    .option-switch a.is-active { background: var(--coral); border-color: var(--coral); }
+  </style>
+</head>
+<body>
+<div class="site-wrap">
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="option-2-daylight.html">
+        <span class="brand-mark">LARK</span>
+        <span class="brand-sub">Kitchens</span>
+      </a>
+      <nav id="site-nav" class="site-nav">
+        <ul class="nav-list">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Packages</a></li>
+          <li><a href="#">Custom</a></li>
+          <li><a href="#">Grills &amp; Tools</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a class="nav-cta" href="#">Start a design</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-main">
+    <section class="hero2">
+      <div class="hero2-inner">
+        <div>
+          <p class="hero2-kicker">Outdoor kitchen cabinetry</p>
+          <h1>Nights worth gathering for.</h1>
+          <p class="hero2-copy">Weather-ready outdoor cabinetry, preconfigured into twelve packages — or shaped to your patio by our design team.</p>
+          <div class="btn-row">
+            <a class="btn" href="#">Start a design</a>
+            <a class="btn btn-ghost" href="#">Browse packages</a>
+          </div>
+        </div>
+        <div class="hero2-media">
+          <img src="https://wordpress-1639387-6605884.cloudwaysapps.com/wp-content/themes/lark-kitchens/assets/images/gallery/patio-2.jpg" alt="White Lark outdoor kitchen on a covered porch in daylight">
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-bar">
+      <div class="trust-inner">
+        <div class="trust-item"><div><strong>Made in the USA</strong><span>American-built cabinetry</span></div></div>
+        <div class="trust-item"><div><strong>Weather-ready</strong><span>Engineered for every season</span></div></div>
+        <div class="trust-item"><div><strong>Patio or job site</strong><span>Delivered where you build</span></div></div>
+        <div class="trust-item"><div><strong>Secure ACH checkout</strong><span>Simple payment via Melio</span></div></div>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="section-inner">
+        <p class="section-kicker">Preconfigured packages</p>
+        <h2 class="section-title">Pick a layout. Host tonight.</h2>
+        <p class="section-lead">A dozen ready-to-order cabinetry packages — plus a custom path when your patio needs something all your own.</p>
+        <div class="package-grid">
+          <a class="package-tile" href="#">
+            <figure><img src="https://wordpress-1639387-6605884.cloudwaysapps.com/wp-content/themes/lark-kitchens/assets/images/packages/hearth-life.jpg" alt="The Hearth"></figure>
+            <h3>The Hearth</h3>
+            <p class="package-meta">Classic cookout island · Compact</p>
+            <p>A welcoming starter island with room for a grill cutout and storage that lights up any patio.</p>
+            <span class="link-cta">Order this package →</span>
+          </a>
+          <a class="package-tile" href="#">
+            <figure><img src="https://wordpress-1639387-6605884.cloudwaysapps.com/wp-content/themes/lark-kitchens/assets/images/packages/harbor-life.jpg" alt="The Harbor"></figure>
+            <h3>The Harbor</h3>
+            <p class="package-meta">Entertaining sideboard · Medium</p>
+            <p>Built for gatherings — generous counter run and cabinetry that keeps the party flowing.</p>
+            <span class="link-cta">Order this package →</span>
+          </a>
+          <a class="package-tile" href="#">
+            <figure><img src="https://wordpress-1639387-6605884.cloudwaysapps.com/wp-content/themes/lark-kitchens/assets/images/packages/ridge-life.jpg" alt="The Ridge"></figure>
+            <h3>The Ridge</h3>
+            <p class="package-meta">Straight-run workhorse · Medium</p>
+            <p>A confident linear layout with balanced storage for serious outdoor chefs.</p>
+            <span class="link-cta">Order this package →</span>
+          </a>
+          <a class="package-tile" href="#">
+            <figure><img src="https://wordpress-1639387-6605884.cloudwaysapps.com/wp-content/themes/lark-kitchens/assets/images/packages/gathering-life.jpg" alt="The Gathering"></figure>
+            <h3>The Gathering</h3>
+            <p class="package-meta">Full celebration kitchen · Large</p>
+            <p>Our most festive layout — room to cook, serve, and celebrate.</p>
+            <span class="link-cta">Order this package →</span>
+          </a>
+          <a class="package-tile" href="#">
+            <figure><img src="https://wordpress-1639387-6605884.cloudwaysapps.com/wp-content/themes/lark-kitchens/assets/images/packages/gathering-white.jpg" alt="The Ember"></figure>
+            <h3>The Ember</h3>
+            <p class="package-meta">Signature celebration kitchen</p>
+            <p>Our flagship package — maximum presence, maximum party.</p>
+            <span class="link-cta">Order this package →</span>
+          </a>
+          <a class="package-tile" href="#">
+            <figure><img src="https://wordpress-1639387-6605884.cloudwaysapps.com/wp-content/themes/lark-kitchens/assets/images/gallery/granite-white.jpg" alt="The Summit"></figure>
+            <h3>The Summit</h3>
+            <p class="package-meta">Granite-top classic · Medium</p>
+            <p>Granite counters and calm gray cabinetry for a patio that means business.</p>
+            <span class="link-cta">Order this package →</span>
+          </a>
+        </div>
+        <div class="btn-row" style="margin-top:2rem;">
+          <a class="btn" href="#">See all 12 packages</a>
+          <a class="btn btn-ghost" href="#">Design a custom layout</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-elev">
+      <div class="section-inner split">
+        <div class="split-media">
+          <img src="https://wordpress-1639387-6605884.cloudwaysapps.com/wp-content/themes/lark-kitchens/assets/images/details/detail-white-1.jpg" alt="White outdoor cabinetry detail">
+        </div>
+        <div>
+          <p class="section-kicker">Finishes &amp; build</p>
+          <h2 class="section-title">Cabinetry first. Celebration always.</h2>
+          <p class="section-lead" style="margin-bottom:1.25rem;">Weather-ready outdoor cabinets with clean lines and storage that keeps the party moving. Pick a powder-coat finish that matches your patio.</p>
+          <div class="finishes">
+            <div class="finish"><div class="finish-chip" style="background:#8a9377;"></div><span>Sage</span></div>
+            <div class="finish"><div class="finish-chip" style="background:#f4f2ec;"></div><span>Cloud</span></div>
+            <div class="finish"><div class="finish-chip" style="background:#4a4f55;"></div><span>Slate</span></div>
+            <div class="finish"><div class="finish-chip" style="background:#cfc2a8;"></div><span>Sand</span></div>
+            <div class="finish"><div class="finish-chip" style="background:#2e2b28;"></div><span>Graphite</span></div>
+            <div class="finish"><div class="finish-chip" style="background:#d9472b;"></div><span>Ember</span></div>
+          </div>
+          <div class="btn-row" style="margin-top:1.75rem;">
+            <a class="btn" href="#">Start an order</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner split">
+        <div>
+          <p class="section-kicker">For homeowners</p>
+          <h2 class="section-title">Your backyard, headquarters.</h2>
+          <p class="section-lead" style="margin-bottom:1.25rem;">We help families make the most of every square foot of backyard — from Tuesday-night dinners to hosting the whole cul-de-sac.</p>
+          <ul class="checklist">
+            <li>Twelve preconfigured packages built to serve every need</li>
+            <li>Full design services for custom orders</li>
+            <li>Guidance from first sketch to first cookout</li>
+            <li>Weather-ready cabinetry for seasons of stories</li>
+          </ul>
+          <div class="btn-row">
+            <a class="btn" href="#">Browse packages</a>
+            <a class="btn btn-ghost" href="#">Start a custom design</a>
+          </div>
+        </div>
+        <div class="split-media">
+          <img src="https://wordpress-1639387-6605884.cloudwaysapps.com/wp-content/themes/lark-kitchens/assets/images/packages/hearth-life.jpg" alt="Sage green outdoor kitchen island in a sunny backyard">
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-elev">
+      <div class="section-inner split">
+        <div class="split-media">
+          <img src="https://wordpress-1639387-6605884.cloudwaysapps.com/wp-content/themes/lark-kitchens/assets/images/gallery/patio-1.jpg" alt="Covered pavilion outdoor kitchen installation">
+        </div>
+        <div>
+          <p class="section-kicker">For contractors</p>
+          <h2 class="section-title">Your job site, our cabinetry.</h2>
+          <p class="section-lead" style="margin-bottom:1.25rem;">We back you from quote to final walkthrough — with cabinetry delivered right to the job site and a program built around your success.</p>
+          <ul class="checklist">
+            <li>Sales support that helps you win the project</li>
+            <li>Delivery straight to your job site</li>
+            <li>Contractor program with dedicated resources</li>
+            <li>Installation support for clean punch lists</li>
+          </ul>
+          <a class="btn" href="#">Join the contractor program</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section anatomy-section">
+      <div class="section-inner">
+        <p class="section-kicker">The layout</p>
+        <h2 class="section-title">Anatomy of a great backyard.</h2>
+        <div class="anatomy">
+          <img class="anatomy-scene" src="https://wordpress-1639387-6605884.cloudwaysapps.com/wp-content/themes/lark-kitchens/assets/images/gallery/patio-1.jpg" alt="Covered pavilion with grill run and bar seating">
+          <div class="hotspot" style="--x:24%; --y:52%; --lift:clamp(48px, 9vw, 115px);">
+            <span class="hotspot-card">Where the<br>show happens</span>
+            <span class="hotspot-line" aria-hidden="true"></span>
+            <span class="hotspot-dot" aria-hidden="true"></span>
+          </div>
+          <div class="hotspot" style="--x:44%; --y:60%; --lift:clamp(30px, 5vw, 65px);">
+            <span class="hotspot-card">Prep, plate,<br>repeat</span>
+            <span class="hotspot-line" aria-hidden="true"></span>
+            <span class="hotspot-dot" aria-hidden="true"></span>
+          </div>
+          <div class="hotspot" style="--x:70%; --y:58%; --lift:clamp(52px, 10vw, 125px);">
+            <span class="hotspot-card">Where everyone<br>ends up sitting</span>
+            <span class="hotspot-line" aria-hidden="true"></span>
+            <span class="hotspot-dot" aria-hidden="true"></span>
+          </div>
+          <div class="hotspot" style="--x:34%; --y:47%; --lift:clamp(40px, 7vw, 90px);">
+            <span class="hotspot-card">Low &amp; slow<br>lives here</span>
+            <span class="hotspot-line" aria-hidden="true"></span>
+            <span class="hotspot-dot" aria-hidden="true"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-elev">
+      <div class="section-inner split">
+        <div>
+          <p class="section-kicker">Coming soon</p>
+          <h2 class="section-title">Grills &amp; tools</h2>
+          <p class="section-lead">Cabinetry is the foundation. Next up: grills and outdoor tools that complete the Lark setup — same energetic spirit, same American backyard pride.</p>
+          <a class="btn btn-ghost" href="#">Get notified</a>
+        </div>
+        <div class="split-media">
+          <img src="https://wordpress-1639387-6605884.cloudwaysapps.com/wp-content/themes/lark-kitchens/assets/images/gallery/patio-4.jpg" alt="Outdoor kitchen ready for grilling">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <p class="footer-brand">
+          <span class="brand-mark">LARK</span>
+          <span class="brand-sub">Kitchens</span>
+        </p>
+        <p class="footer-note">Outdoor cabinetry for celebrations that spill into the night. Option 2 static preview — Full Daylight.</p>
+      </div>
+      <nav class="footer-nav">
+        <a href="#">Packages</a>
+        <a href="#">Custom</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+  </footer>
+</div>
+
+<div class="option-switch">
+  <span>Option</span>
+  <a href="option-1-daybreak.html">1</a>
+  <a class="is-active" href="option-2-daylight.html">2</a>
+  <a href="option-3-twilight.html">3</a>
+</div>
+</body>
+</html>
