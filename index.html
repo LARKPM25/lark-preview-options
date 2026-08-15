@@ -3,70 +3,89 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lark Kitchens — Restyle Option Previews</title>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=Manrope:wght@400;500;700&family=Syncopate:wght@700&display=swap" rel="stylesheet">
+  <title>Lark Kitchens — Design Option Previews</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: "Manrope", sans-serif;
-      background: #faf6ee;
-      color: #241e17;
+      font-family: "Karla", sans-serif;
+      background: #f5f2ea;
+      color: #26221c;
       min-height: 100vh;
       display: grid;
       place-items: center;
-      padding: 2rem 1.5rem;
+      padding: 3rem 1.5rem;
       box-sizing: border-box;
     }
-    .wrap { max-width: 640px; }
-    .brand { font-family: "Syncopate", sans-serif; letter-spacing: 0.12em; font-size: 1.4rem; margin: 0 0 0.2rem; }
-    .sub { font-size: 0.7rem; letter-spacing: 0.4em; text-transform: uppercase; color: #6d6357; margin: 0 0 2rem; }
-    h1 { font-family: "Source Serif 4", serif; font-weight: 500; font-size: 2.2rem; margin: 0 0 0.75rem; }
-    p { color: #6d6357; line-height: 1.6; margin: 0 0 2rem; }
-    .options { display: grid; gap: 0.85rem; }
+    .wrap { max-width: 680px; }
+    .brand { font-family: "Cormorant Garamond", serif; font-weight: 500; letter-spacing: 0.42em; font-size: 1.6rem; text-transform: uppercase; margin: 0 0 0.2rem; }
+    .sub { font-size: 0.62rem; letter-spacing: 0.5em; text-transform: uppercase; color: #6f685c; margin: 0 0 2.2rem; }
+    h1 { font-family: "Cormorant Garamond", serif; font-weight: 600; font-size: 2.3rem; margin: 0 0 0.6rem; }
+    p.lede { color: #6f685c; line-height: 1.6; margin: 0 0 1.8rem; }
+    h2 { font-size: 0.72rem; letter-spacing: 0.28em; text-transform: uppercase; color: #8b8378; margin: 2.2rem 0 0.9rem; }
+    .options { display: grid; gap: 0.8rem; }
     a.option {
       display: flex;
       align-items: baseline;
       gap: 0.9rem;
       padding: 1.1rem 1.25rem;
       background: #fff;
-      border: 1px solid rgba(36, 30, 23, 0.14);
-      border-radius: 8px;
+      border: 1px solid rgba(38, 34, 28, 0.15);
+      border-radius: 6px;
       text-decoration: none;
       color: inherit;
       transition: border-color 0.2s ease, transform 0.2s ease;
     }
-    a.option:hover { border-color: #ff4d3a; transform: translateY(-2px); }
-    .num {
-      font-family: "Syncopate", sans-serif;
-      font-size: 0.85rem;
-      color: #ff4d3a;
-    }
-    .name { font-family: "Source Serif 4", serif; font-size: 1.25rem; font-weight: 600; }
-    .desc { font-size: 0.85rem; color: #6d6357; margin-left: auto; text-align: right; }
-    @media (max-width: 560px) { .desc { display: none; } }
+    a.option:hover { border-color: #26221c; transform: translateY(-2px); }
+    .num { font-family: "Cormorant Garamond", serif; font-weight: 600; font-size: 1rem; color: #8b8378; }
+    .name { font-family: "Cormorant Garamond", serif; font-size: 1.35rem; font-weight: 600; }
+    .desc { font-size: 0.83rem; color: #6f685c; margin-left: auto; text-align: right; }
+    @media (max-width: 600px) { .desc { display: none; } }
+    .muted a.option { opacity: 0.72; }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <p class="brand">LARK</p>
-    <p class="sub">Kitchens</p>
-    <h1>Homepage restyle options</h1>
-    <p>Three directions to fix the too-dark layout. Each page has a floating pill in the corner to flip between options.</p>
+    <p class="brand">Lark</p>
+    <p class="sub">Kitchens · Design Previews</p>
+    <h1>Homepage design options</h1>
+    <p class="lede">Each page has a floating pill in the corner to flip between the options in its group.</p>
+
+    <h2>New direction — Rejuvenation / Pottery Barn / RH / Boden</h2>
     <div class="options">
+      <a class="option" href="option-4-heritage.html">
+        <span class="num">04</span>
+        <span class="name">Heritage</span>
+        <span class="desc">Rejuvenation — warm cream, editorial, craft</span>
+      </a>
+      <a class="option" href="option-5-gallery.html">
+        <span class="num">05</span>
+        <span class="name">Gallery</span>
+        <span class="desc">RH — minimal luxury, full-screen panels</span>
+      </a>
+      <a class="option" href="option-6-fieldhouse.html">
+        <span class="num">06</span>
+        <span class="name">Field House</span>
+        <span class="desc">Pottery Barn × Boden — warm, friendly commerce</span>
+      </a>
+    </div>
+
+    <h2>Earlier round — Ember restyles</h2>
+    <div class="options muted">
       <a class="option" href="option-1-daybreak.html">
         <span class="num">01</span>
         <span class="name">Ember Daybreak</span>
-        <span class="desc">Night hero, light everything else</span>
+        <span class="desc">Dusk hero, light body</span>
       </a>
       <a class="option" href="option-2-daylight.html">
         <span class="num">02</span>
         <span class="name">Full Daylight</span>
-        <span class="desc">Light &amp; editorial end to end</span>
+        <span class="desc">Light &amp; editorial</span>
       </a>
       <a class="option" href="option-3-twilight.html">
         <span class="num">03</span>
         <span class="name">Twilight</span>
-        <span class="desc">Warm espresso, softened night</span>
+        <span class="desc">Warm espresso night</span>
       </a>
     </div>
   </div>
